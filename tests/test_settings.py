@@ -12,7 +12,7 @@ class TestSettings:
         """Should create settings with sensible defaults."""
         settings = Settings()
         assert settings.llm.provider == "gemini"
-        assert settings.llm.model == "gemini-2.5-flash"
+        assert settings.llm.model == "gemini-3.1-flash-lite"
         assert settings.llm.temperature == 0.1
         assert "bug" in settings.agents.enabled
         assert "security" in settings.agents.enabled

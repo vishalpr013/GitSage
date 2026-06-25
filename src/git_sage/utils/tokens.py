@@ -19,7 +19,7 @@ def estimate_tokens(text: str) -> int:
         return len(text) // 4
 
 
-def estimate_cost(input_tokens: int, output_tokens: int, model: str = "gemini-2.0-flash") -> float:
+def estimate_cost(input_tokens: int, output_tokens: int, model: str = "gemini-3.1-flash-lite") -> float:
     """Estimate the cost of an LLM call in USD.
 
     Pricing is approximate and may change. Update as needed.
@@ -30,9 +30,10 @@ def estimate_cost(input_tokens: int, output_tokens: int, model: str = "gemini-2.
         "gemini-2.0-flash-lite": {"input": 0.02, "output": 0.10},
         "gemini-2.5-pro": {"input": 1.25, "output": 10.00},
         "gemini-2.5-flash": {"input": 0.15, "output": 0.60},
+        "gemini-3.1-flash-lite": {"input": 0.075, "output": 0.30},
     }
 
-    model_pricing = pricing.get(model, pricing["gemini-2.0-flash"])
+    model_pricing = pricing.get(model, pricing["gemini-3.1-flash-lite"])
 
     input_cost = (input_tokens / 1_000_000) * model_pricing["input"]
     output_cost = (output_tokens / 1_000_000) * model_pricing["output"]
