@@ -12,7 +12,7 @@
 - 📋 **Changelog Generation** — Produces categorized release notes from Git history
 
 ## Installation
-
+ pip
 ```bash
 pip install git-sage
 ```

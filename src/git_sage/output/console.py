@@ -7,7 +7,7 @@ from rich.text import Text
 def error_panel(message: str) -> Panel:
     """Create a red error panel."""
     return Panel(
-        Text.from_markup(f"[bold red]✗[/]  {message}"),
+        Text.from_markup(f"[bold red]X[/]  {message}"),
         border_style="red",
         padding=(0, 1),
     )
@@ -16,7 +16,7 @@ def error_panel(message: str) -> Panel:
 def success_panel(message: str) -> Panel:
     """Create a green success panel."""
     return Panel(
-        Text.from_markup(f"[bold green]✓[/]  {message}"),
+        Text.from_markup(f"[bold green]OK[/]  {message}"),
         border_style="green",
         padding=(0, 1),
     )
@@ -25,7 +25,7 @@ def success_panel(message: str) -> Panel:
 def info_panel(message: str) -> Panel:
     """Create a blue info panel."""
     return Panel(
-        Text.from_markup(f"[bold blue]ℹ[/]  {message}"),
+        Text.from_markup(f"[bold blue]i[/]  {message}"),
         border_style="blue",
         padding=(0, 1),
     )
@@ -34,7 +34,7 @@ def info_panel(message: str) -> Panel:
 def warning_panel(message: str) -> Panel:
     """Create a yellow warning panel."""
     return Panel(
-        Text.from_markup(f"[bold yellow]⚠[/]  {message}"),
+        Text.from_markup(f"[bold yellow]![/]  {message}"),
         border_style="yellow",
         padding=(0, 1),
     )

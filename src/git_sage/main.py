@@ -12,9 +12,12 @@ from rich.console import Console
 from git_sage import __version__
 from git_sage.commands import review, commit, explain, blame, changelog, config_cmd
 
-# ── Fix Windows console encoding ───────────────────────────────
 if sys.platform == "win32":
-    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 # ── Main Typer app ──────────────────────────────────────────────
 app = typer.Typer(
