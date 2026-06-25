@@ -31,7 +31,7 @@ class LLMSettings(BaseModel):
 
     provider: str = Field(default="gemini", description="LLM provider: gemini")
     model: str = Field(
-        default="gemini-2.0-flash",
+        default="gemini-2.5-flash",
         description="Model name to use.",
     )
     api_key: Optional[str] = Field(

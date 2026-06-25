@@ -50,7 +50,7 @@ Create a `.gitsage.toml` in your project root for project-specific settings:
 
 ```toml
 [llm]
-model = "gemini-2.0-flash"
+model = "gemini-2.5-flash"
 temperature = 0.1
 
 [agents]
